@@ -56,7 +56,7 @@ const Worker : Runtime = {
   },
 
   isXHRSupported() : boolean {
-    if('caches' in self) {
+    if('registration' in self && self['registration'] instanceof ServiceWorkerRegistration ) {
       return false;
     }
     return true;
